@@ -16,6 +16,10 @@ Or you can include the minified CSS file directly in your HTML:
 Once installed, you can use the framework by adding the appropriate classes to your HTML elements. The list of HTML elements and utility classes included in the framework can be found below.
 
 ### HTML Elements
+* Body
+* Headings
+* Paragraphs
+* Links
 
 ### Utility Classes
 * Alignment
@@ -43,7 +47,8 @@ To customize the framework, you can override the default styles or use custom va
 ```
 
 Instead, you can also override the CSS file directly in your own CSS file like so:
-```.custom-styling {
+```
+.custom-styling {
 background-color: #CDDEFF;
 color: black;
 }
