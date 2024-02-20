@@ -1,1 +1,52 @@
 @import 'reset';
+@import 'variables';
+
+/*************** DEFAULT STYLES *****************/
+
+/*font style*/
+body {
+  margin-left: 2%;
+  margin-top: 1%;
+  font-family: $font-stack;
+}
+
+/*font sizes*/
+
+h1, h2, h3 {
+  color: $default-text;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 1%;
+  color: $default-text;
+}
+
+
+/*links*/
+a {
+  background-color: $primary;
+  color: $tertiary;
+
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: $secondary;
+}

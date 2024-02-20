@@ -1,0 +1,32 @@
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$font-stack: Poppins, sans serif !default;      
+
+// Text Colours
+$default-text: #1f1f1f !default;
+
+$primary: #5a81fa !default;
+$secondary: #2c3d8f !default;
+$tertiary: #FFFFFF !default;
+
+$info: #2c3fd2 !default;
+$success: #16d643 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+
+// Background Colours
+$bg-primary: #182c68 !default;
+$bg-secondary: #9aa5e0 !default;
+
+$bg-success: #28a745 !default;
+$bg-danger: #dc3545 !default;
+$bg-warning: #ffc107 !default;
+$bg-info: #17a2b8 !default;
+
+$bg-light: #f8f9fa !default;
+$bg-dark: #343a40 !default;
+
+// Box Shadow
+$box-shadow: rgba(0, 0, 0, 0.15) !default;
