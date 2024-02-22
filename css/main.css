@@ -131,7 +131,6 @@ form input, form select {
   accent-color: #5a81fa;
   border-radius: 50px;
   padding: 10px 20px;
-  margin: 0.5rem 0rem;
   text-decoration: none;
   font-size: 0.9em;
   display: block;
@@ -170,7 +169,6 @@ form input[type=submit], form input[type=button], form input[type=reset] {
   accent-color: #FFFFFF;
   border-radius: 50px;
   padding: 10px 20px;
-  margin: 0.5rem 0rem;
   text-decoration: none;
   font-size: 1em;
 }
@@ -221,7 +219,6 @@ a, button {
   accent-color: #FFFFFF;
   border-radius: 50px;
   padding: 10px 20px;
-  margin: 0.5rem 0rem;
   text-decoration: none;
 }
 
@@ -300,6 +297,24 @@ table thead {
 table tfoot {
   color: #FFFFFF;
   background-color: #5a81fa;
+}
+
+progress::-moz-progress-bar {
+  background: #5a81fa;
+}
+
+progress::-webkit-progress-value {
+  background: #5a81fa;
+}
+
+progress {
+  color: #5a81fa;
+  background-color: #d6d6d6;
+  border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+  background: #5a81fa;
 }
 
 /*# sourceMappingURL=main.css.map */
