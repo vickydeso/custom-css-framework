@@ -45,10 +45,43 @@ a, button {
 }
 
 a:hover, button:hover {
-  background-color: $secondary;
+  @include focus-theme();
 }
 
-/*buttons*/
+// Lists
+ul{
+  @include container-theme();
 
-// TODO: turn button styles into inheritance and pass to links and form submitions
+  li{
+    list-style-type: circle;
+    list-style-position: inside;
+  }
+}
+
+ol{
+  @include container-theme();
+
+  li{
+    list-style: decimal;
+    list-style-position: inside;
+  }
+}
+
+// Definition Lists
+dl {
+  @include container-theme();
+
+  dt{
+    font-weight: bold;
+  }
+
+  dd{
+    margin-bottom: $element-pad;
+  }
+  dd:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
 // TODO: clean up file structure

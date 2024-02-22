@@ -1,4 +1,6 @@
-/*********** Mixins ***********/
+/*********** MIXINS ***********/
+
+// Buttons
 @mixin pill-theme($text:$tertiary, $bg:$primary, $bor:$bg, $acc:$text){
     background-color: $bg;
     color: $text;
@@ -11,11 +13,13 @@
     text-decoration: none;
 }
 
-@mixin focus-theme($bg:$secondary, $bor:$bg-primary){
+// Hover/focus states
+@mixin focus-theme($bg:$secondary, $bor:$bg){
     background-color: $bg;
     border-color: $bor;
 }
 
+// Containers
 @mixin container-theme($bg:none, $bor:$bg){
     padding: $container-pad;
     margin: $element-pad;

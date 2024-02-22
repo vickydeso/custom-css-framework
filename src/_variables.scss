@@ -40,6 +40,6 @@ $pill: 50px;
 $container: 1rem;
 
 // Padding 
-$container-pad: 1rem;
-$element-pad: 0.5rem;
-$tight-pad: 0;
+$container-pad: 1rem;       // More white space for larger, container elements
+$element-pad: 0.5rem;       // Less white space for single elements
+$tight-pad: 0;              // Remove whitespace
