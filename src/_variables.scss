@@ -19,7 +19,7 @@ $danger: #dc3545 !default;
 // Background Colours
 $bg-primary: #182c68 !default;
 $bg-secondary: #9aa5e0 !default;
-$bg-tertiary: #e2e2e2 !default;
+$bg-tertiary: #efefef !default;
 
 $bg-success: #28a745 !default;
 $bg-danger: #dc3545 !default;
@@ -34,3 +34,12 @@ $border: #000;
 
 // Box Shadow
 $box-shadow: rgba(0, 0, 0, 0.15) !default;
+
+// Border Radius
+$pill: 50px;
+$container: 1rem;
+
+// Padding 
+$container-pad: 1rem;
+$element-pad: 0.5rem;
+$tight-pad: 0;

@@ -1,35 +1,61 @@
-/*Forms*/
+/*** Default form styling ***/
+
 form{
+  @include container-theme($tertiary);
 
     label{
-      padding: 0.5rem;
+      padding: $element-pad;
     }
   
-    input{
-      padding: 0.5rem;
-      border-radius: 50px;
-      box-sizing: content-box;
-      
-      background-color: $bg-tertiary;
-      accent-color: $primary;
-      border: 1px solid $bg-tertiary;
-      
+    // Light grey rounded input elements
+    input, select{
+      @include pill-theme($default-text, $bg-tertiary, $bg-tertiary, $primary);
+
       font-size: 0.9em;
+      display: block;
+      overflow: hidden;
+    }
+
+    // Keep checkboxes & radio buttons on the same line as the label
+    input[type='checkbox'], input[type='radio']{
+      display: inline;
+    }
+
+    // Constrain input box for image uploads
+    input[type='image']{
+      max-width: 10rem;
     }
   
-    input:hover{
-      border: 1px solid $bg-primary;
-      background-color: lighten($bg-tertiary, 10%);
+    // Hover & focus styles
+    input:hover, input:focus, select:hover,  select:focus{
+      @include focus-theme(lighten($bg-tertiary, 10%), $bg-primary);
       accent-color: darken($primary, 25%);
     }
-  
-    input:focus{
-      border: 1px solid $bg-primary;
-    }
     
-    input[type="color"]{
-      overflow: hidden;
-      padding: 0;
+    // Cleaning up the color selector
+    input[type='color']{
+      padding: $tight-pad;
+    }
+
+    //Fieldset containers
+    fieldset{
+      @include container-theme(lighten($bg-secondary, 15%));
+
+      legend{
+        font-weight: bold;
+      }
+    }
+
+    // Submit, reset, and buttons
+    input[type='submit'], input[type='button'], input[type='reset']{
+      @include pill-theme();
+      font-size: 1em;
+    }
+
+    input[type='submit']:hover, input[type='submit']:focus, 
+    input[type='button']:hover, input[type='button']:focus, 
+    input[type='reset']:hover, input[type='reset']:focus{
+      @include focus-theme();
     }
   
   }

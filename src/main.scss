@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'variables';
+@import 'mixins';
 
 /*************** DEFAULT STYLES *****************/
 @import 'default/forms';
@@ -40,12 +41,7 @@ p {
 
 /*links*/
 a, button {
-  background-color: $primary;
-  color: $tertiary;
-
-  padding: 10px 20px;
-  border-radius: 50px;
-  text-decoration: none;
+  @include pill-theme();
 }
 
 a:hover, button:hover {
