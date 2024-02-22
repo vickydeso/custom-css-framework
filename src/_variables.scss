@@ -1,4 +1,4 @@
-
+/******** VARIABLES *********/
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -19,6 +19,7 @@ $danger: #dc3545 !default;
 // Background Colours
 $bg-primary: #182c68 !default;
 $bg-secondary: #9aa5e0 !default;
+$bg-tertiary: #e2e2e2 !default;
 
 $bg-success: #28a745 !default;
 $bg-danger: #dc3545 !default;
@@ -27,6 +28,9 @@ $bg-info: #17a2b8 !default;
 
 $bg-light: #f8f9fa !default;
 $bg-dark: #343a40 !default;
+
+// Border
+$border: #000;
 
 // Box Shadow
 $box-shadow: rgba(0, 0, 0, 0.15) !default;

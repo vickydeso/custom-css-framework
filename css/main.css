@@ -8,7 +8,7 @@
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video, audio, [type=color], [type=radio], [type=checkbox], [type=range]):not(svg *, symbol *)) {
   all: unset;
   display: revert;
 }
@@ -108,7 +108,34 @@ meter {
   display: none;
 }
 
+/******** VARIABLES *********/
 /*************** DEFAULT STYLES *****************/
+/*Forms*/
+form label {
+  padding: 0.5rem;
+}
+form input {
+  padding: 0.5rem;
+  border-radius: 50px;
+  box-sizing: content-box;
+  background-color: #e2e2e2;
+  accent-color: #5a81fa;
+  border: 1px solid #e2e2e2;
+  font-size: 0.9em;
+}
+form input:hover {
+  border: 1px solid #182c68;
+  background-color: #fcfcfc;
+  accent-color: #0637ce;
+}
+form input:focus {
+  border: 1px solid #182c68;
+}
+form input[type=color] {
+  overflow: hidden;
+  padding: 0;
+}
+
 /*font style*/
 body {
   margin-left: 2%;
@@ -142,7 +169,7 @@ p {
 }
 
 /*links*/
-a {
+a, button {
   background-color: #5a81fa;
   color: #FFFFFF;
   padding: 10px 20px;
@@ -150,8 +177,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover {
   background-color: #2c3d8f;
 }
+
+/*buttons*/
 
 /*# sourceMappingURL=main.css.map */

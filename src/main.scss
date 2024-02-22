@@ -2,6 +2,7 @@
 @import 'variables';
 
 /*************** DEFAULT STYLES *****************/
+@import 'default/forms';
 
 /*font style*/
 body {
@@ -38,7 +39,7 @@ p {
 
 
 /*links*/
-a {
+a, button {
   background-color: $primary;
   color: $tertiary;
 
@@ -47,6 +48,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover {
   background-color: $secondary;
 }
+
+/*buttons*/
+
+// TODO: turn button styles into inheritance and pass to links and form submitions
+// TODO: clean up file structure

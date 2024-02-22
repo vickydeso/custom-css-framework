@@ -1,0 +1,36 @@
+/*Forms*/
+form{
+
+    label{
+      padding: 0.5rem;
+    }
+  
+    input{
+      padding: 0.5rem;
+      border-radius: 50px;
+      box-sizing: content-box;
+      
+      background-color: $bg-tertiary;
+      accent-color: $primary;
+      border: 1px solid $bg-tertiary;
+      
+      font-size: 0.9em;
+    }
+  
+    input:hover{
+      border: 1px solid $bg-primary;
+      background-color: lighten($bg-tertiary, 10%);
+      accent-color: darken($primary, 25%);
+    }
+  
+    input:focus{
+      border: 1px solid $bg-primary;
+    }
+    
+    input[type="color"]{
+      overflow: hidden;
+      padding: 0;
+    }
+  
+  }
+  
