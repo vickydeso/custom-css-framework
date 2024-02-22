@@ -1,3 +1,8 @@
+/*************** DEPENDANCIES *****************/
+/******** VARIABLES *********/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*********** MIXINS ***********/
+/*************** DEFAULT STYLES ***************/
 /***
     The new CSS reset - version 1.11.2 (last updated 15.11.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -7,7 +12,6 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *:where(:not(html, iframe, canvas, img, svg, video, audio, [type=color], [type=radio], [type=checkbox], [type=range]):not(svg *, symbol *)) {
   all: unset;
   display: revert;
@@ -108,13 +112,11 @@ meter {
   display: none;
 }
 
-/******** VARIABLES *********/
-/*********** MIXINS ***********/
-/*************** DEFAULT STYLES *****************/
 /*** Default form styling ***/
 form {
+  display: block;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
@@ -134,6 +136,7 @@ form input, form select {
   font-size: 0.9em;
   display: block;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 form input[type=checkbox], form input[type=radio] {
   display: inline;
@@ -150,8 +153,9 @@ form input[type=color] {
   padding: 0;
 }
 form fieldset {
+  display: block;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
   background-color: #d5d9f2;
   border-color: #d5d9f2;
@@ -209,7 +213,7 @@ p {
   color: #1f1f1f;
 }
 
-/*links*/
+/* links */
 a, button {
   background-color: #5a81fa;
   color: #FFFFFF;
@@ -227,8 +231,9 @@ a:hover, button:hover {
 }
 
 ul {
+  display: block;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
   background-color: none;
   border-color: none;
@@ -239,8 +244,9 @@ ul li {
 }
 
 ol {
+  display: block;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
   background-color: none;
   border-color: none;
@@ -251,8 +257,9 @@ ol li {
 }
 
 dl {
+  display: block;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   border-radius: 1rem;
   background-color: none;
   border-color: none;
@@ -265,6 +272,34 @@ dl dd {
 }
 dl dd:last-child {
   margin-bottom: 0;
+}
+
+table {
+  display: block;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: none;
+  border-color: none;
+  width: max-content;
+}
+table th {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #efefef;
+}
+table td {
+  padding: 0.5rem;
+}
+table thead {
+  color: #FFFFFF;
+  background-color: #295bf9;
+}
+table tfoot {
+  color: #FFFFFF;
+  background-color: #5a81fa;
 }
 
 /*# sourceMappingURL=main.css.map */

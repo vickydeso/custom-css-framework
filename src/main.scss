@@ -1,8 +1,9 @@
-@import 'reset';
+/*************** DEPENDANCIES *****************/
 @import 'variables';
 @import 'mixins';
 
-/*************** DEFAULT STYLES *****************/
+/*************** DEFAULT STYLES ***************/
+@import 'reset';
 @import 'default/forms';
 
 /*font style*/
@@ -39,7 +40,7 @@ p {
 }
 
 
-/*links*/
+/* links */
 a, button {
   @include pill-theme();
 }
@@ -83,5 +84,34 @@ dl {
   }
 }
 
+table{
+  @include container-theme();
+  width: max-content;
+  
+  th{
+    padding: $element-pad;
+    font-weight: bold;
+  }
+
+  tbody{
+    tr:nth-child(odd){
+      background-color: $bg-tertiary;
+    }
+  }
+
+  td{
+    padding: $element-pad;
+  }
+
+  thead{
+    color: $tertiary;
+    background-color: darken($primary, 10%);
+  }
+
+  tfoot{
+    color: $tertiary;
+    background-color: $primary;
+  }
+}
 
 // TODO: clean up file structure
