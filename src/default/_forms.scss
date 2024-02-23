@@ -17,6 +17,10 @@ form{
       margin-bottom: $container-pad;
     }
 
+    textarea{
+      @include container-theme($bg-tertiary);
+    }
+
     // Keep checkboxes & radio buttons on the same line as the label
     input[type='checkbox'], input[type='radio']{
       display: inline;
@@ -28,7 +32,10 @@ form{
     }
   
     // Hover & focus styles
-    input:hover, input:focus, select:hover,  select:focus{
+    input:hover, input:focus, 
+    select:hover,  select:focus,
+    textarea:hover,  textarea:focus
+    {
       @include focus-theme(lighten($bg-tertiary, 10%), $bg-primary);
       accent-color: darken($primary, 25%);
     }

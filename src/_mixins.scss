@@ -21,8 +21,8 @@
 // Containers
 @mixin container-theme($bg:none, $bor:$bg){
     display: block;
-    padding: $container-pad;
-    margin: $container-pad;
+    padding: 0.5em;
+    margin: 0.5em;
     border-radius: $container;
 
     background-color: $bg;

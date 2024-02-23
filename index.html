@@ -8,9 +8,202 @@
 </head>
 
 <body>
-    <h1 class="secondary">Test</h1>
+    <h1 class="secondary">Test page</h1>
     <p class="primary">This page is to test our code is working.</p>
+
+    <!-- ******************* FORMATTING ************************ -->
+    <h2>Headings:</h2>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+
+    <h2>Paragraph Text</h2> 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic odio ipsa excepturi non aperiam totam, voluptatibus ea molestias ab voluptate praesentium laboriosam veniam nobis magnam perspiciatis dolor, aut natus enim?</p>
     <a class="border shadow">I am a button</a>
+
+    <h2>progress bar</h2>
+    <label for="file">Downloading progress:</label>
+    <progress id="file" value="32" max="100"> 32% </progress> 
+
+    <!-- Lists -->
+    <h2>Lists</h2>
+    <h3>Unordered</h3>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul> 
+
+      <h3>Ordered</h3>
+      <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol>
+
+      <h3>Definition List</h3>
+      <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+      </dl> 
+
+    <!-- *************** FORMS ********************* -->
+    <h2>Forms</h2>
+    <form action="" method="">
+          
+        <!-- Checkboxes -->
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label> 
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label> 
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>  
+          
+        <br>
+        <!-- Colour Picker -->
+        <label>color</label>
+        <input type="color">
+
+        <!-- Calendar Pickers -->
+        <label>date</label>
+        <input type="date">
+          
+        <label>datetime-local</label>
+        <input type="datetime-local">
+          
+        <!-- Text Inputs -->
+        <label>Text Input</label>
+        <input type="text">
+
+        <label>email</label>
+        <input type="email" value="default text">          
+
+        <label>month</label>
+        <input type="month">
+
+        <label>number</label>
+        <input type="number">
+
+        <label>password</label>
+        <input type="password">
+
+        <label>search</label>
+        <input type="search">   
+
+        <label>tel</label>
+        <input type="tel">
+
+        <label>time</label>
+        <input type="time">
+
+        <label>url</label>
+        <input type="url">          
+
+        <label>week</label>
+        <input type="week">
+
+        <label>Text Area</label>
+        <textarea id="w3review" name="w3review" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+        
+        <!-- File Uploads -->
+        <label>file</label>
+        <input type="file">
+          
+        <label>image</label>
+        <input type="image">
+
+        <!-- Radio Buttons -->
+        <label>radio 1</label>
+        <input type="radio">
+        <label>radio 2</label>
+        <input type="radio">
+        <label>radio 3</label>
+        <input type="radio">
+        
+        <!-- Range -->
+        <label>range</label>
+        <input type="range">
+        
+        <!-- Field set | dropdown | grouped options -->
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label>Dropdown</label>
+            <select  name="cars" id="cars">
+            <optgroup label="Swedish Cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="German Cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </optgroup>
+            </select> 
+        </fieldset>
+
+        <!-- Data list -->
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+
+        <!-- Buttons -->
+        <input type="reset">
+        <input type="button" value="button">
+        <input type="submit" value="Submit">
+      </form> 
+
+      <!-- *************** TABLES ******************* -->
+       <!-- Table with column groups -->
+      <table>
+        <colgroup>
+          <col span="2">
+          <col >
+        </colgroup>
+        <tr>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>3476896</td>
+          <td>My first HTML</td>
+          <td>$53</td>
+        </tr>
+      </table> 
+     
+      <!-- Table with Header, body, and footer -->
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>$80</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Sum</td>
+            <td>$180</td>
+          </tr>
+        </tfoot>
+      </table>
+
 </body>
 
 </html>
