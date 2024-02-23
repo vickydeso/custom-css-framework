@@ -1,1 +1,24 @@
-@import 'reset';
+/*************** DEPENDANCIES *****************/
+@import 'variables';
+@import 'mixins';
+
+/*************** DEFAULT STYLES ***************/
+@import 'default/reset';
+@import 'default/default';
+@import 'default/forms';
+
+/*************** UTILITIES ***************/
+@import 'utils/alignment';
+@import 'utils/border';
+@import 'utils/color';
+@import 'utils/cursor';
+@import 'utils/display';
+@import 'utils/float';
+@import 'utils/font';
+@import 'utils/margin';
+@import 'utils/opacity';
+@import 'utils/overflow';
+@import 'utils/padding';
+@import 'utils/positioning';
+@import 'utils/shadow';
+

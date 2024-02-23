@@ -1,12 +1,125 @@
+/*************** DEPENDANCIES *****************/
+/******** VARIABLES *********/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*********** MIXINS ***********/
+/*************** DEFAULT STYLES ***************/
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio, [type=color], [type=radio], [type=checkbox], [type=range]):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu, summary {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none;
+}
+
 /*font style*/
 body {
   margin-left: 2%;
   margin-top: 1%;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans serif;
 }
 
 /*font sizes*/
-
 h1, h2, h3 {
   color: #1f1f1f;
   font-weight: bold;
@@ -31,18 +144,810 @@ p {
   color: #1f1f1f;
 }
 
-
-/*links*/
-a {
-  background-color: #5A81FA;
-  color: white;
-  padding: 10px 20px;
+/* links */
+a, button {
+  background-color: #5a81fa;
+  color: #FFFFFF;
+  border: 1px solid #5a81fa;
+  accent-color: #FFFFFF;
   border-radius: 50px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
-a:hover {
-  background-color:#2C3D8F;
+a:hover, button:hover {
+  background-color: #2c3d8f;
+  border-color: #2c3d8f;
+}
+
+ul {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: none;
+  border-color: none;
+}
+ul li {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+ol {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: none;
+  border-color: none;
+}
+ol li {
+  list-style: decimal;
+  list-style-position: inside;
+}
+
+dl {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: none;
+  border-color: none;
+}
+dl dt {
+  font-weight: bold;
+}
+dl dd {
+  margin-bottom: 0.5rem;
+}
+dl dd:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: none;
+  border-color: none;
+  width: max-content;
+}
+table th {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #efefef;
+}
+table td {
+  padding: 0.5rem;
+}
+table thead {
+  color: #FFFFFF;
+  background-color: #295bf9;
+}
+table tfoot {
+  color: #FFFFFF;
+  background-color: #5a81fa;
+}
+
+progress::-moz-progress-bar {
+  background: #5a81fa;
+}
+
+progress::-webkit-progress-value {
+  background: #5a81fa;
+}
+
+progress {
+  color: #5a81fa;
+  background-color: #d6d6d6;
+  border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+  background: #5a81fa;
+}
+
+/*** Default form styling ***/
+form {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+form label {
+  padding: 0.5rem;
+}
+form input, form select {
+  background-color: #efefef;
+  color: #1f1f1f;
+  border: 1px solid #efefef;
+  accent-color: #5a81fa;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 0.9em;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+form textarea {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: #efefef;
+  border-color: #efefef;
+}
+form input[type=checkbox], form input[type=radio] {
+  display: inline;
+}
+form input[type=image] {
+  max-width: 10rem;
+}
+form input:hover, form input:focus,
+form select:hover, form select:focus,
+form textarea:hover, form textarea:focus {
+  background-color: white;
+  border-color: #182c68;
+  accent-color: #0637ce;
+}
+form input[type=color] {
+  padding: 0;
+}
+form fieldset {
+  display: block;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1rem;
+  background-color: #d5d9f2;
+  border-color: #d5d9f2;
+}
+form fieldset legend {
+  font-weight: bold;
+}
+form input[type=submit], form input[type=button], form input[type=reset] {
+  background-color: #5a81fa;
+  color: #FFFFFF;
+  border: 1px solid #5a81fa;
+  accent-color: #FFFFFF;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1em;
+}
+form input[type=submit]:hover, form input[type=submit]:focus,
+form input[type=button]:hover, form input[type=button]:focus,
+form input[type=reset]:hover, form input[type=reset]:focus {
+  background-color: #2c3d8f;
+  border-color: #2c3d8f;
+}
+
+/*************** UTILITIES ***************/
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-baseline {
+  align-self: baseline;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+/* Cross-axis */
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+/* Main-axis */
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+.border-top {
+  border-top: 1px solid #000;
+}
+
+.border-right {
+  border-right: 1px solid #000;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000;
+}
+
+.border-left {
+  border-left: 1px solid #000;
+}
+
+.border-rounded {
+  border-radius: 1px solid 0.25rem;
+}
+
+.text-primary {
+  color: #5a81fa;
+}
+
+.text-secondary {
+  color: #2c3d8f;
+}
+
+.text-info {
+  color: #2c3fd2;
+}
+
+.text-success {
+  color: #16d643;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.bg-primary {
+  background-color: #182c68;
+}
+
+.bg-secondary {
+  background-color: #9aa5e0;
+}
+
+.bg-success {
+  background-color: #28a745;
+}
+
+.bg-danger {
+  background-color: #dc3545;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.bg-dark {
+  background-color: #343a40;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.cursor-progress {
+  cursor: progress;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.float-none {
+  float: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.font-weight-xlight {
+  font-weight: 200;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-standard {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 600;
+}
+
+.font-weight-xheavy {
+  font-weight: 800;
+}
+
+.font-size-xsmall {
+  font-size: 0.5rem;
+}
+
+.font-size-small {
+  font-size: 0.8rem;
+}
+
+.font-size-standard {
+  font-size: 1rem;
+}
+
+.font-size-large {
+  font-size: 1.2rem;
+}
+
+.font-size-xlarge {
+  font-size: 1.5rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-transform {
+  text-transform: lowercase;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-3 {
+  margin: 1rem;
+}
+
+.m-4 {
+  margin: 1.5rem;
+}
+
+.m-5 {
+  margin: 3rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 1rem;
+}
+
+.mr-4 {
+  margin-right: 1.5rem;
+}
+
+.mr-5 {
+  margin-right: 3rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1.5rem;
+}
+
+.ml-5 {
+  margin-left: 3rem;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.p-4 {
+  padding: 1.5rem;
+}
+
+.p-5 {
+  padding: 3rem;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pt-3 {
+  padding-top: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1.5rem;
+}
+
+.pt-5 {
+  padding-top: 3rem;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-3 {
+  padding-right: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1.5rem;
+}
+
+.pr-5 {
+  padding-right: 3rem;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 1rem;
+}
+
+.pb-4 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 3rem;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1.5rem;
+}
+
+.pl-5 {
+  padding-left: 3rem;
+}
+
+.position-static {
+  position: static;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+.position-top {
+  top: 0;
+}
+
+.position-bottom {
+  bottom: 0;
+}
+
+.position-left {
+  left: 0;
+}
+
+.position-right {
+  right: 0;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
 /*# sourceMappingURL=main.css.map */

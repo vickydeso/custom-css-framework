@@ -1,0 +1,31 @@
+/*********** MIXINS ***********/
+
+// Buttons
+@mixin pill-theme($text:$tertiary, $bg:$primary, $bor:$bg, $acc:$text){
+    background-color: $bg;
+    color: $text;
+    border: 1px solid $bor;
+    accent-color: $acc;
+
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+// Hover/focus states
+@mixin focus-theme($bg:$secondary, $bor:$bg){
+    background-color: $bg;
+    border-color: $bor;
+}
+
+// Containers
+@mixin container-theme($bg:none, $bor:$bg){
+    display: block;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: $container;
+
+    background-color: $bg;
+    border-color: $bor;
+    
+}

@@ -1,0 +1,122 @@
+/*font style*/
+body {
+    margin-left: 2%;
+    margin-top: 1%;
+    font-family: $font-stack;
+  }
+  
+  /*font sizes*/
+  
+  h1, h2, h3 {
+    color: $default-text;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1%;
+    color: $default-text;
+  }
+  
+  
+  /* links */
+  a, button {
+    @include pill-theme();
+  }
+  
+  a:hover, button:hover {
+    @include focus-theme();
+  }
+  
+  // Unordered Lists
+  ul{
+    @include container-theme();
+  
+    li{
+      list-style-type: circle;
+      list-style-position: inside;
+    }
+  }
+  
+  // Ordered Lists
+  ol{
+    @include container-theme();
+  
+    li{
+      list-style: decimal;
+      list-style-position: inside;
+    }
+  }
+  
+  // Definition Lists
+  dl {
+    @include container-theme();
+  
+    dt{
+      font-weight: bold;
+    }
+  
+    dd{
+      margin-bottom: $element-pad;
+    }
+    dd:last-child{
+      margin-bottom: 0;
+    }
+  }
+  
+  // Tables
+  table{
+    @include container-theme();
+    width: max-content;
+    
+    th{
+      padding: $element-pad;
+      font-weight: bold;
+    }
+  
+    tbody{
+      tr:nth-child(odd){
+        background-color: $bg-tertiary;
+      }
+    }
+  
+    td{
+      padding: $element-pad;
+    }
+  
+    thead{
+      color: $tertiary;
+      background-color: darken($primary, 10%);
+    }
+  
+    tfoot{
+      color: $tertiary;
+      background-color: $primary;
+    }
+  }
+  
+  // Progress Bars
+  progress::-moz-progress-bar { background: $primary;}
+  progress::-webkit-progress-value { background: $primary;}
+  progress { 
+    color: $primary; 
+    background-color: darken($bg-tertiary, 10%);
+    border-radius: $pill;
+  }
+  
+  progress::-webkit-progress-value{
+    background:$primary;
+  }
