@@ -20,6 +20,9 @@ Once installed, you can use the framework by adding the appropriate classes to y
 * Headings
 * Paragraphs
 * Links
+* Lists
+* Tables
+* Forms
 
 ### Utility Classes
 * Alignment
